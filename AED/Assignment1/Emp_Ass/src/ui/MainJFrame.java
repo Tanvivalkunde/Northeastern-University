@@ -6,6 +6,7 @@
 package ui;
 
 import model.ProfileInfo;
+import model.ProfileInfoHistory;
 
 
 /**
@@ -18,7 +19,7 @@ public class MainJFrame extends javax.swing.JFrame {
      * Creates new form MainJFrame
      */
     
-   ProfileInfo ProfileInfo;
+   ProfileInfoHistory ProfileInfo;
     
     
     
@@ -26,7 +27,7 @@ public class MainJFrame extends javax.swing.JFrame {
     public MainJFrame() {
         initComponents();
         
-        ProfileInfo = new ProfileInfo();
+        ProfileInfo = new ProfileInfoHistory();
     }
 
     /**
@@ -47,6 +48,11 @@ public class MainJFrame extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         btnCreate.setText("Create");
+        btnCreate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCreateActionPerformed(evt);
+            }
+        });
 
         btnView.setText("View");
 
@@ -68,7 +74,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addComponent(btnCreate)
                 .addGap(40, 40, 40)
                 .addComponent(btnView)
-                .addContainerGap(143, Short.MAX_VALUE))
+                .addContainerGap(443, Short.MAX_VALUE))
         );
 
         SplitPane.setLeftComponent(controlPanel);
@@ -77,11 +83,11 @@ public class MainJFrame extends javax.swing.JFrame {
         workArea.setLayout(workAreaLayout);
         workAreaLayout.setHorizontalGroup(
             workAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 293, Short.MAX_VALUE)
+            .addGap(0, 693, Short.MAX_VALUE)
         );
         workAreaLayout.setVerticalGroup(
             workAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 298, Short.MAX_VALUE)
+            .addGap(0, 598, Short.MAX_VALUE)
         );
 
         SplitPane.setRightComponent(workArea);
@@ -100,6 +106,13 @@ public class MainJFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
+        // TODO add your handling code here:
+        CreateJPanel createPanel = new CreateJPanel(ProfileInfo);
+        SplitPane.setRightComponent(createPanel);
+    }//GEN-LAST:event_btnCreateActionPerformed
+
+    
     /**
      * @param args the command line arguments
      */
