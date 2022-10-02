@@ -113,5 +113,5 @@ public class ProfileInfo {
     public void setImage(Image image) {
         this.image = image;
     }
-    
 }
+

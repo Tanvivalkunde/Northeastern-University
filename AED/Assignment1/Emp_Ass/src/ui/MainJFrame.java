@@ -7,7 +7,7 @@ package ui;
 
 import model.ProfileInfo;
 import model.ProfileInfoHistory;
-
+ 
 
 /**
  *
@@ -55,6 +55,11 @@ public class MainJFrame extends javax.swing.JFrame {
         });
 
         btnView.setText("View");
+        btnView.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout controlPanelLayout = new javax.swing.GroupLayout(controlPanel);
         controlPanel.setLayout(controlPanelLayout);
@@ -111,6 +116,12 @@ public class MainJFrame extends javax.swing.JFrame {
         CreateJPanel createPanel = new CreateJPanel(ProfileInfo);
         SplitPane.setRightComponent(createPanel);
     }//GEN-LAST:event_btnCreateActionPerformed
+
+    private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
+        // TODO add your handling code here:
+        ViewJPanel viewPanel = new ViewJPanel(ProfileInfo);
+        SplitPane.setRightComponent(viewPanel);
+    }//GEN-LAST:event_btnViewActionPerformed
 
     
     /**

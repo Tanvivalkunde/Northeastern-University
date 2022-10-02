@@ -26,10 +26,19 @@ public class ProfileInfoHistory {
     public void setHistory(ArrayList<ProfileInfo> history) {
         this.history = history;
     }
-
-    public void setName(String text) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    
+    public ProfileInfo addNewProfileInfo(){
+    
+        ProfileInfo newProfile = new ProfileInfo();
+        history.add(newProfile);
+        return newProfile;
     }
     
+     
+          
+      }
+
+  
     
-}
+    
+
