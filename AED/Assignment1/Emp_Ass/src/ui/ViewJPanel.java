@@ -204,11 +204,25 @@ public class ViewJPanel extends javax.swing.JPanel {
 
     private void btnviewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnviewActionPerformed
         // TODO add your handling code here:
+        int selectedRowIndex = tblprofile.getSelectedRow();
         
-        
+        if (selectedRowIndex<0)
+        {
+        JOptionPane.showMessageDialog(this, "Please select a row to view.");
+        return;
     }//GEN-LAST:event_btnviewActionPerformed
-
-
+        DefaultTableModel model = (DefaultTableModel) tblprofile.getModel();
+        ProfileInfo selectedprofile = (ProfileInfo) model.getValueAt(selectedRowIndex, 0);
+    
+        txtteam.setText(selectedprofile.getTeamInfo());
+        txtposition.setText(selectedprofile.getPositionTitle());
+        txtmobile.setText(selectedprofile.getMobileNumber());
+        txtemail.setText(selectedprofile.getEmailId());
+        
+    }
+    
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btndelete;
     private javax.swing.JButton btnview;
@@ -234,18 +248,24 @@ public class ViewJPanel extends javax.swing.JPanel {
     for (ProfileInfo pi : history.getHistory()){
         
         Object[] row = new Object[6];
-        row[0] = pi.getName();
+        row[0] = pi;
         row[1] = pi.getEmployeeId();
         row[2] = pi.getAge();
         row[3] = pi.getGender();
         row[4] = pi.getStartDate();
         row[5] = pi.getLevel();
         
+        
         model.addRow(row);
       
         
     }
     }
+
+    
+    
+    
+    
 }
     
     

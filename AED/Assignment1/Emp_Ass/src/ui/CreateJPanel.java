@@ -215,7 +215,7 @@ public class CreateJPanel extends javax.swing.JPanel {
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         // TODO add your handling code here:
-        String name = txtName.getName();
+        String name = txtName.getText();
         int employeeId = Integer.parseInt(txtempid.getText());
         int age = Integer.parseInt(txtAge.getText());
         String gender = txtgender.getText();
@@ -240,7 +240,7 @@ public class CreateJPanel extends javax.swing.JPanel {
         
         JOptionPane.showMessageDialog(this, "New Profile Added");
         
-        txtName.setName("");
+        txtName.setText("");
         txtempid.setText("");
         txtAge.setText("");
         txtgender.setText("");
