@@ -12,18 +12,18 @@ import java.awt.Image;
  * @author Tanvi
  */
 public class ProfileInfo {
- private String name;
-    private int employeeId;
-    private int age; 
-    private String gender;       
-    private String startDate;   
-    private String level;
-    private String teamInfo;
-    private String positionTitle;
+ public String name;
+    public int employeeId;
+    public int age; 
+    public String gender;       
+    public String startDate;   
+    public String level;
+    public String teamInfo;
+    public String positionTitle;
 
     
-    private String mobileNumber;
-    private String emailId;
+    public String mobileNumber;
+    public String emailId;
     Image image;
 
     public String getName() {
