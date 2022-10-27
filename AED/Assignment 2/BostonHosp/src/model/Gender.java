@@ -9,6 +9,8 @@ package model;
  *
  * @author Tanvi
  */
-class Gender {
-    
+public enum Gender {
+    MALE,
+    FEMALE,
+    OTHER
 }

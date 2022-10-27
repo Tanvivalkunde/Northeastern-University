@@ -9,6 +9,6 @@ package model;
  *
  * @author Tanvi
  */
-class House {
+public class House {
     
 }
