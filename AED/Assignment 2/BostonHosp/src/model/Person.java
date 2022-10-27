@@ -117,4 +117,16 @@ public class Person {
     public void setResidence(House residence) {
         this.residence = residence;
     }
+
+    private static class Gender {
+
+        public Gender() {
+        }
+    }
+
+    private static class House {
+
+        public House() {
+        }
+    }
 }
