@@ -19,11 +19,11 @@ public class Person {
     private String email;
     private String password;
     private String phoneNumber;
-    private Gender gender;
+    private String gender;
     private Role role;
     private House residence;
 
-    public Person(String ssn, String name, Date dateOfBirth, String email, String password, String phoneNumber, Gender gender, Role role, House residence) {
+    public Person(String ssn, String name, Date dateOfBirth, String email, String password, String phoneNumber, String gender, Role role) {
         this.ssn = ssn;
         this.name = name;
         this.dateOfBirth = dateOfBirth;
@@ -32,7 +32,7 @@ public class Person {
         this.phoneNumber = phoneNumber;
         this.gender = gender;
         this.role = role;
-        this.residence = residence;
+//        this.residence = residence;
         
     
     
@@ -94,13 +94,14 @@ public class Person {
         this.phoneNumber = phoneNumber;
     }
 
-    public Gender getGender() {
+    public String getGender() {
         return gender;
     }
 
-    public void setGender(Gender gender) {
+    public void setGender(String gender) {
         this.gender = gender;
     }
+    
 
     public Role getRole() {
         return role;
