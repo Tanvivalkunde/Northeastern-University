@@ -6,15 +6,53 @@
 package model;
 
 import java.util.Date;
+import java.text.SimpleDateFormat;
+import java.util.concurrent.TimeUnit;
 
 /**
  *
  * @author Tanvi
  */
 public class Encounter {
-    private int id;
-    private Date date;
-    private VitalSigns vitalsSign;
-    private Doctor doctor;
     
+    private Patient patient;
+    private Date encounterDate;
+    private VitalSigns vitalSign;
+    private String currentHealthStatus;
+    
+    public Encounter() {
+   
+    }  
+
+    public Patient getPatient() {
+        return patient;
+    }
+
+    public void setPatient(Patient patient) {
+        this.patient = patient;
+    }
+
+    public Date getEncounterDate() {
+        return encounterDate;
+    }
+
+    public void setEncounterDate(Date encounterDate) {
+        this.encounterDate = encounterDate;
+    }
+
+    public VitalSigns getVitalSign() {
+        return vitalSign;
+    }
+
+    public void setVitalSign(VitalSigns vitalSign) {
+        this.vitalSign = vitalSign;
+    }
+
+    public String getCurrentHealthStatus() {
+        return currentHealthStatus;
+    }
+
+    public void setCurrentHealthStatus(String currentHealthStatus) {
+        this.currentHealthStatus = currentHealthStatus;
+    }
 }
