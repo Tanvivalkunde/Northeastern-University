@@ -10,20 +10,20 @@ import ui.LoginPanel;
 
 /**
  *
- * @author  KishoreKVN
+ * @author Tanvi
  */
 public class AdminJPanel extends javax.swing.JPanel {
     JPanel mainWorkArea;
     HospitalcareSystem hospitalcareSystem;
     
     /** Creates new form AdminWorkAreaJPanel */
-    public AdminJPanel(JPanel mainWorkArea, HospitalcareSystem healthcareSystem) {
+    public AdminJPanel(JPanel mainWorkArea, HospitalcareSystem hospitalcareSystem) {
         
         this.mainWorkArea = mainWorkArea;
-        this.hospitalcareSystem = healthcareSystem;
+        this.hospitalcareSystem = hospitalcareSystem;
         
         initComponents();
-        lblWelcome.setText("Hello Admin!!! Welcome Back...");
+        lblWelcome.setText("Hello Admin! Welcome Back..");
     }
     
     
