@@ -2,7 +2,7 @@
 package ui.Admin;
 
 import model.Community;
-import model.HealthcareSystem;
+import model.HospitalcareSystem;
 import model.Patient;
 import model.PatientDirectory;
 import ui.Patient.CreatePatient;
@@ -16,24 +16,24 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author KishoreKVN
+ * @author Tanvi
  */
 public class ManageCommunity extends javax.swing.JPanel {
 
     private JPanel userProcessContainer;
     private PatientDirectory patientDirectory;
-    HealthcareSystem healthcareSystem;
+    HospitalcareSystem hospitalcareSystem;
     
     List<Community> communities;
     
     
     /** Creates new form ManageSuppliers */
-    public ManageCommunity(JPanel upc, HealthcareSystem healthcareSystem) {
+    public ManageCommunity(JPanel upc, HospitalcareSystem hospitalcareSystem) {
         initComponents();
         this.userProcessContainer = upc;
-        this.healthcareSystem = healthcareSystem;
+        this.hospitalcareSystem = hospitalcareSystem;
         
-        this.communities = healthcareSystem.getCity().getCommunities();
+        this.communities = hospitalcareSystem.getCity().getCommunities();
         refreshTable();
     }
     
@@ -178,7 +178,7 @@ public class ManageCommunity extends javax.swing.JPanel {
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         
-        CreateCommunity cc = new CreateCommunity(userProcessContainer, healthcareSystem);
+        CreateCommunity cc = new CreateCommunity(userProcessContainer, hospitalcareSystem);
         userProcessContainer.add("CreateCommunity", cc);
         CardLayout layout = (CardLayout)userProcessContainer.getLayout();
         layout.next(userProcessContainer);

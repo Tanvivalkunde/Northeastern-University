@@ -3,7 +3,7 @@ package ui.Admin;
 
 
 import model.Community;
-import model.HealthcareSystem;
+import model.HospitalcareSystem;
 import model.House;
 import model.Patient;
 import model.PatientDirectory;
@@ -24,21 +24,21 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author KishoreKVN
+ * @author Tanvi
  */
 public class ManagePatients extends javax.swing.JPanel {
 
     private JPanel userProcessContainer;
     private PatientDirectory patientDirectory;
-    HealthcareSystem healthcareSystem;
+    HospitalcareSystem hospitalcareSystem;
     List<Community> communities;
     /** Creates new form ManageSuppliers */
-    public ManagePatients(JPanel upc, HealthcareSystem healthcareSystem) {
+    public ManagePatients(JPanel upc, HospitalcareSystem hospitalcareSystem) {
         initComponents();
         this.userProcessContainer = upc;
-        this.patientDirectory = healthcareSystem.getPatientDirectory();
-        this.healthcareSystem = healthcareSystem;
-        this.communities = healthcareSystem.getCity().getCommunities();
+        this.patientDirectory = hospitalcareSystem.getPatientDirectory();
+        this.hospitalcareSystem = hospitalcareSystem;
+        this.communities = hospitalcareSystem.getCity().getCommunities();
         refreshTable();
     }
     
