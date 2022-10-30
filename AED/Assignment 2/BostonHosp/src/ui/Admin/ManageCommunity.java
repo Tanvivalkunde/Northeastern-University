@@ -2,7 +2,7 @@
 package ui.Admin;
 
 import model.Community;
-import model.HospitalcareSystem;
+import model.HealthcareSystem;
 import model.Patient;
 import model.PatientDirectory;
 import ui.Patient.CreatePatient;
@@ -22,18 +22,18 @@ public class ManageCommunity extends javax.swing.JPanel {
 
     private JPanel userProcessContainer;
     private PatientDirectory patientDirectory;
-    HospitalcareSystem hospitalcareSystem;
+    HealthcareSystem healthcareSystem;
     
     List<Community> communities;
     
     
     /** Creates new form ManageSuppliers */
-    public ManageCommunity(JPanel upc, HospitalcareSystem hospitalcareSystem) {
+    public ManageCommunity(JPanel upc, HealthcareSystem healthcareSystem) {
         initComponents();
         this.userProcessContainer = upc;
-        this.hospitalcareSystem = hospitalcareSystem;
+        this.healthcareSystem = healthcareSystem;
         
-        this.communities = hospitalcareSystem.getCity().getCommunities();
+        this.communities = healthcareSystem.getCity().getCommunities();
         refreshTable();
     }
     
@@ -178,7 +178,7 @@ public class ManageCommunity extends javax.swing.JPanel {
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         
-        CreateCommunity cc = new CreateCommunity(userProcessContainer, hospitalcareSystem);
+        CreateCommunity cc = new CreateCommunity(userProcessContainer, healthcareSystem);
         userProcessContainer.add("CreateCommunity", cc);
         CardLayout layout = (CardLayout)userProcessContainer.getLayout();
         layout.next(userProcessContainer);
@@ -194,12 +194,12 @@ public class ManageCommunity extends javax.swing.JPanel {
         }
         //cannot delete community if there is any house associated with it
         Community c = (Community) tblCommunity.getValueAt(row,0);
-        if(c.getNoOfHouses() > 0){
-            JOptionPane.showMessageDialog(null, "Cannot delete a community with houses associated", "Warning", JOptionPane.WARNING_MESSAGE);
-            return;
-        }else{
+        if(c.getNoOfHouses() <= 0){
             communities.remove(c);
             refreshTable();
+        }else{
+            JOptionPane.showMessageDialog(null, "Cannot delete a community with houses associated", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
         }
         
     }//GEN-LAST:event_btnRemoveActionPerformed

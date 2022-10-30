@@ -489,7 +489,7 @@
                   <Component id="jLabel3" min="-2" pref="51" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="281" max="32767" attributes="0"/>
+                  <EmptySpace pref="290" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -523,7 +523,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="99" green="0" red="0" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Community Health Analytics"/>
+            <Property name="text" type="java.lang.String" value="BOSTON HOSPITAL SYSTEM"/>
             <Property name="alignmentY" type="float" value="1.0"/>
           </Properties>
         </Component>

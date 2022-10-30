@@ -4,21 +4,36 @@
  * and open the template in the editor.
  */
 package model;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author Tanvi
  */
- public class PatientDirectory {
 
-    public void addPatient(Patient patient) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+public class PatientDirectory {
+    
+    private List<Patient> patientDirectory;
+
+    public PatientDirectory() {
+        this.patientDirectory = new ArrayList<>();
+    }
+    
+    public List<Patient> getPatientDirectory() {
+        return patientDirectory;
     }
 
-    public Iterable<Patient> getPatientDirectory() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void setPatientDirectory(List<Patient> patientDirectory) {
+        this.patientDirectory = patientDirectory;
     }
-
     
+    public void addPatient(Patient p){
+        patientDirectory.add(p);
+    }
     
+    public void removePatient(Patient p) {
+        patientDirectory.remove(p);
+    }
 }
+ 

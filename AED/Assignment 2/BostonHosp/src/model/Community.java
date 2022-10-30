@@ -12,24 +12,21 @@ import java.util.List;
  *
  * @author Tanvi
  */
-public class Community {
-    
-    private String name;
+        public class Community {
+  private String name;
     private int id;
     private String cityName;
     private List<House> houses;
     
     private static int communityCounter = 0;
-    
+
     public Community(String name, String cityName) {
         this.name = name;
         this.id = communityCounter++;
         this.cityName = cityName;
         this.houses = new ArrayList<>();
-        
-        
     }
-
+    
     public String getName() {
         return name;
     }
@@ -57,26 +54,31 @@ public class Community {
     public List<House> getHouses() {
         return houses;
     }
-
+    
     public void setHouses(List<House> houses) {
         this.houses = houses;
     }
-
-    public static int getCommunityCounter() {
-        return communityCounter;
-    }
-
-    public static void setCommunityCounter(int communityCounter) {
-        Community.communityCounter = communityCounter;
-    }
-
-    public void addHouseToCommunity(House house) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public Object getNoOfHouses() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    
+    public void addHouseToCommunity(House house){
+        houses.add(house);
     }
     
+//    public void removeHouseFromCommunity(House house){
+//        houses.remove(house);
+////        houses.
+//    }
+    
+    public void removeHouseFromCommunity(int index){
+        houses.remove(index);
+        
+    }
+    
+    public int getNoOfHouses(){
+        return houses.size();
+    }
+    @Override
+    public String toString(){
+        return name;
+    }
     
 }

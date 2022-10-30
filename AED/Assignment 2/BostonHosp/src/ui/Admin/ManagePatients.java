@@ -3,7 +3,7 @@ package ui.Admin;
 
 
 import model.Community;
-import model.HospitalcareSystem;
+import model.HealthcareSystem;
 import model.House;
 import model.Patient;
 import model.PatientDirectory;
@@ -30,15 +30,15 @@ public class ManagePatients extends javax.swing.JPanel {
 
     private JPanel userProcessContainer;
     private PatientDirectory patientDirectory;
-    HospitalcareSystem hospitalcareSystem;
+    HealthcareSystem healthcareSystem;
     List<Community> communities;
     /** Creates new form ManageSuppliers */
-    public ManagePatients(JPanel upc, HospitalcareSystem hospitalcareSystem) {
+    public ManagePatients(JPanel upc, HealthcareSystem healthcareSystem) {
         initComponents();
         this.userProcessContainer = upc;
-        this.patientDirectory = hospitalcareSystem.getPatientDirectory();
-        this.hospitalcareSystem = hospitalcareSystem;
-        this.communities = hospitalcareSystem.getCity().getCommunities();
+        this.patientDirectory = healthcareSystem.getPatientDirectory();
+        this.healthcareSystem = healthcareSystem;
+        this.communities = healthcareSystem.getCity().getCommunities();
         refreshTable();
     }
     
@@ -56,8 +56,8 @@ public class ManagePatients extends javax.swing.JPanel {
             row[3] = p.getEmail();
             row[4] = p.getHouse().getHouseNumber();
             row[5] = p.getHouse().getCommunityName();
-            row[6] = p.getEncounterHistory().size() == 0 ? "None" 
-                    : p.getEncounterHistory().getEncounterHistory().get(p.getEncounterHistory().size() - 1).getEncounterDate();
+            row[6] = p.getEncounterhistory().size() == 0 ? "None" 
+                    : p.getEncounterhistory().getEncounterhistory().get(p.getEncounterhistory().size() - 1).getEncounterDate();
             model.addRow(row);
         }
     }
