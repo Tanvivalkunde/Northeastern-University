@@ -9,6 +9,16 @@ package model;
  *
  * @author Tanvi
  */
-class PatientDirectory {
+ public class PatientDirectory {
+
+    public void addPatient(Patient patient) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Iterable<Patient> getPatientDirectory() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    
     
 }

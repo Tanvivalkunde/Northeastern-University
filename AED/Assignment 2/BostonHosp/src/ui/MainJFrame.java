@@ -1,18 +1,18 @@
 
 package ui;
 
-import model.HospitalcareSystem;
+import model.HealthcareSystem;
 import java.awt.CardLayout;
 
 
 /**
  *
- * @author Tanvi
+ * @author KishoreKVN
  */
 
 public class MainJFrame extends javax.swing.JFrame {
 
-    HospitalcareSystem hospitalcareSystem;
+    HealthcareSystem healthcareSystem;
     
     /**
      * Creates new form MainJFrame
@@ -20,7 +20,7 @@ public class MainJFrame extends javax.swing.JFrame {
     public MainJFrame() {
         initComponents();
         
-        hospitalcareSystem = new HospitalcareSystem();
+        healthcareSystem = new HealthcareSystem();
         setSize(1000,800);
         setResizable(false);
         
@@ -91,7 +91,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void setLoginScreen() {
 
-       LoginPanel loginPanel = new LoginPanel(mainWorkArea, hospitalcareSystem);
+       LoginPanel loginPanel = new LoginPanel(mainWorkArea, healthcareSystem);
        mainWorkArea.add("LoginPanel",loginPanel);
        CardLayout layout = (CardLayout) mainWorkArea.getLayout();
        layout.next(mainWorkArea);

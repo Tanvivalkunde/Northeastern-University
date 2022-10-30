@@ -69,6 +69,14 @@ public class Community {
     public static void setCommunityCounter(int communityCounter) {
         Community.communityCounter = communityCounter;
     }
+
+    public void addHouseToCommunity(House house) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Object getNoOfHouses() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
 }

@@ -3,7 +3,7 @@ package ui.Doctor;
 
 import ui.Patient.ViewEncounterDetails;
 import model.Encounter;
-import model.EncounterHistory;
+import model.Encounterhistory;
 import model.Patient;
 import model.PatientDirectory;
 import java.awt.CardLayout;
@@ -11,10 +11,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author KishoreKVN
- */
+ 
 public class DoctorViewReport extends javax.swing.JPanel {
     
     JPanel workArea;
@@ -32,12 +29,12 @@ public class DoctorViewReport extends javax.swing.JPanel {
     }
     
     public void refreshTable(Patient selectedPatient) {
-        EncounterHistory encounterHistory = selectedPatient.getEncounterHistory() ;
+        Encounterhistory encounterHistory = selectedPatient.getEncounterhistory() ;
         
         DefaultTableModel model = (DefaultTableModel)tblEncounterDetails.getModel();
         model.setRowCount(0);
         
-        for(Encounter e : encounterHistory.getEncounterHistory()){
+        for(Encounter e : encounterHistory.getEncounterhistory()){
             Object row[] = new Object[4];
             row[0] = e;  
             row[1] = e.getPatient().getAge(); 
@@ -152,7 +149,7 @@ public class DoctorViewReport extends javax.swing.JPanel {
         Encounter selectedEncounter = (Encounter) tblEncounterDetails.getValueAt(selectedRow, 0);
         
         ViewEncounterDetails vd = new ViewEncounterDetails(workArea, selectedEncounter);
-        workArea.add("ViewEncounterDetails", vd);
+        workArea.("ViewEncounterDetails", vd);
         CardLayout layout = (CardLayout)workArea.getLayout();
         layout.next(workArea);
     }//GEN-LAST:event_btnViewMoreDetailsActionPerformed

@@ -1,7 +1,7 @@
 
 package ui.Doctor;
 
-import model.HospitalcareSystem;
+import model.HealthcareSystem;
 import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.JPanel;
@@ -9,17 +9,17 @@ import ui.LoginPanel;
 
 /**
  *
- * @author  Tanvi
+ * @author  KishoreKVN
  */
 public class DoctorJPanel extends javax.swing.JPanel {
     JPanel mainWorkArea;
-    HospitalcareSystem hospitalcareSystem;
+    HealthcareSystem healthcareSystem;
     
     /** Creates new form AdminWorkAreaJPanel */
-    public DoctorJPanel(JPanel mainWorkArea, HospitalcareSystem hospitalcareSystem) {
+    public DoctorJPanel(JPanel mainWorkArea, HealthcareSystem healthcareSystem) {
         
         this.mainWorkArea = mainWorkArea;
-        this.hospitalcareSystem = hospitalcareSystem;
+        this.healthcareSystem = healthcareSystem;
         
         initComponents();
         lblWelcome.setText("Hello Doctor!!!  Welcome Back...");
@@ -123,7 +123,7 @@ public class DoctorJPanel extends javax.swing.JPanel {
 
     private void btnRecordEncounterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecordEncounterActionPerformed
         
-        AddNewEncounter recordNewEncounter = new AddNewEncounter(workArea, hospitalcareSystem);
+        AddNewEncounter recordNewEncounter = new AddNewEncounter(workArea, healthcareSystem);
         workArea.add("RecordNewEncounter", recordNewEncounter);
         CardLayout layout = (CardLayout) workArea.getLayout();
         layout.next(workArea);
@@ -147,7 +147,7 @@ public class DoctorJPanel extends javax.swing.JPanel {
 
     private void btnReportsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReportsActionPerformed
         
-        DoctorViewReport doctorViewReport = new DoctorViewReport(workArea, hospitalcareSystem.getPatientDirectory());
+        DoctorViewReport doctorViewReport = new DoctorViewReport(workArea, healthcareSystem.getPatientDirectory());
         workArea.add("DoctorViewReport", doctorViewReport);
         CardLayout layout = (CardLayout) workArea.getLayout();
         layout.next(workArea);

@@ -6,7 +6,7 @@
 package ui.Doctor;
 
 import model.Encounter;
-import model.HospitalcareSystem;
+import model.HealthcareSystem;
 import model.Patient;
 import model.PatientDirectory;
 import model.VitalSigns;
@@ -27,15 +27,15 @@ import javax.swing.JPanel;
 public class AddNewEncounter extends javax.swing.JPanel {
     
     JPanel workArea; 
-    HospitalcareSystem hospitalcareSystem;
+    HealthcareSystem healthcareSystem;
     /**
      * Creates new form RecordNewEncounter
      */
-    public AddNewEncounter(JPanel workArea, HospitalcareSystem hospitalcareSystem) {
+    public AddNewEncounter(JPanel workArea, HealthcareSystem healthcareSystem) {
         initComponents();
         
         this.workArea = workArea;
-        this.hospitalcareSystem = hospitalcareSystem;
+        this.healthcareSystem = healthcareSystem;
         populatePatientCombo();
     }
 
@@ -215,7 +215,8 @@ public class AddNewEncounter extends javax.swing.JPanel {
        
         
         Patient selectedPatient = (Patient) patientComboBox.getSelectedItem();
-        List<Encounter> encounterHistory = selectedPatient.getEncounterHistory().getEncounterHistory();
+        List<Encounter> encounterHistory;
+        encounterHistory = selectedPatient.getEncounterhistory().getEncounterhistory();
         Encounter newEncounter = new Encounter(); 
            
         if(selectedPatient != null){
@@ -224,7 +225,7 @@ public class AddNewEncounter extends javax.swing.JPanel {
             
 
             try{
-                newEncounter.setVitalSign(new VitalSign(Integer.parseInt(txtRr.getText()),Integer.parseInt(txtBp.getText()),
+                newEncounter.setVitalSign(new VitalSigns(Integer.parseInt(txtRr.getText()),Integer.parseInt(txtBp.getText()),
                    Integer.parseInt(txtHr.getText()), Double.parseDouble(txtTemperature.getText())));
                }catch(NumberFormatException e){
                     JOptionPane.showMessageDialog(this, "Fill in All the fields along with valid data format", "Warning", JOptionPane.WARNING_MESSAGE);
@@ -287,7 +288,7 @@ public class AddNewEncounter extends javax.swing.JPanel {
     private void populatePatientCombo() {
         patientComboBox.removeAllItems();
         
-        for(Patient p : hospitalcareSystem.getPatientDirectory().getPatientDirectory()){
+        for(Patient p : healthcareSystem.getPatientDirectory().getPatientDirectory()){
             patientComboBox.addItem(p);
         }
     }

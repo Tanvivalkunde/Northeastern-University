@@ -2,7 +2,7 @@
 package ui;
 
 import model.Community;
-import model.HospitalcareSystem;
+import model.HealthcareSystem;
 import model.Patient;
 import ui.Doctor.DoctorJPanel;
 import ui.Patient.PatientJPanel;
@@ -21,14 +21,14 @@ public class LoginPanel extends javax.swing.JPanel {
     
     
     JPanel mainWorkArea;
-    HospitalcareSystem hospitalcareSystem;
+    HealthcareSystem healthcareSystem;
     Patient selectedPatient;
     
-    public LoginPanel(JPanel mainWorkArea, HospitalcareSystem healthcareSystem) {
+    public LoginPanel(JPanel mainWorkArea, HealthcareSystem healthcareSystem) {
         
         initComponents();
         this.mainWorkArea = mainWorkArea;
-        this.hospitalcareSystem = hospitalcareSystem;
+        this.healthcareSystem = healthcareSystem;
         
         populateRoleCombo();
         populatePatientsCombo();
@@ -75,11 +75,11 @@ public class LoginPanel extends javax.swing.JPanel {
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("WE HELP YOU !");
+        jLabel2.setText("WE HELP SERVE");
 
         jLabel8.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("# SERVING SMILES CITYWIDE");
+        jLabel8.setText("# SERVING SMILES");
 
         jLabel14.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
@@ -89,7 +89,7 @@ public class LoginPanel extends javax.swing.JPanel {
 
         jLabel15.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel15.setText("123456789");
+        jLabel15.setText("12345678");
 
         btnAnalytics.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_statistics_75px.png"))); // NOI18N
         btnAnalytics.addActionListener(new java.awt.event.ActionListener() {
@@ -237,7 +237,7 @@ public class LoginPanel extends javax.swing.JPanel {
         jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(51, 51, 255));
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel10.setText("!!! WELCOME BACK !!!");
+        jLabel10.setText("Choose respective role to login");
         jPanel4.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 0, 270, 30));
 
         jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
@@ -321,7 +321,7 @@ public class LoginPanel extends javax.swing.JPanel {
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 153));
-        jLabel4.setText("BOSTON HOSPITAL SYSTEM");
+        jLabel4.setText("Community Health Analytics");
         jLabel4.setAlignmentY(1.0F);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -333,7 +333,7 @@ public class LoginPanel extends javax.swing.JPanel {
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4)
-                .addContainerGap(290, Short.MAX_VALUE))
+                .addContainerGap(281, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -462,14 +462,14 @@ public class LoginPanel extends javax.swing.JPanel {
 
     private void populateInitialData() {
         // creating communities
-        List<Community> communities = hospitalcareSystem.getCity().getCommunities();
-        Community community_santaManta= new Community("Santa Manta", hospitalcareSystem.getCity().getName());
-        Community community_SunnyBunny = new Community("Sunny Bunny", hospitalcareSystem.getCity().getName());
-        Community community_santaHappy = new Community("Santa Happy", hospitalcareSystem.getCity().getName());
+        List<Community> communities = healthcareSystem.getCity().getCommunities();
+        Community community_sanorita= new Community("Sanorita", healthcareSystem.getCity().getName());
+        Community community_sunnyvilla = new Community("SunnyVilla", healthcareSystem.getCity().getName());
+        Community community_santaClause = new Community("Santa Clause", healthcareSystem.getCity().getName());
        
-        communities.add(community_santaManta);
-        communities.add(community_SunnyBunny);
-        communities.add(community_santaHappy);
+        communities.add(community_sanorita);
+        communities.add(community_sunnyvilla);
+        communities.add(community_santaClause);
         
     }
 }

@@ -7,7 +7,7 @@ package ui.Doctor;
 
 import java.awt.CardLayout;
 import model.Community;
-import model.HospitalcareSystem;
+import model.HealthcareSystem;
 import model.Patient;
 import model.PatientDirectory;
 import java.awt.Color;
@@ -26,13 +26,13 @@ import ui.LoginPanel;
 public class AnalyticsReport extends javax.swing.JPanel {
     
     JPanel mainWorkArea;
-    HospitalcareSystem hospitalcareSystem;
+    HealthcareSystem healthcareSystem;
     /**
      * Creates new form AnalyticsReport
      */
-    public AnalyticsReport(JPanel mainWorkArea, HospitalcareSystem hospitalcareSystem) {
+    public AnalyticsReport(JPanel mainWorkArea, HealthcareSystem healthcareSystem) {
         initComponents();
-        this.hospitalcareSystem = hospitalcareSystem;
+        this.healthcareSystem = healthcareSystem;
         this.mainWorkArea = mainWorkArea;
         populateReportTable();
     }
@@ -155,8 +155,8 @@ public class AnalyticsReport extends javax.swing.JPanel {
     
     private List<ReportObj> getReportTableResultSet(){
         List<ReportObj> reportResultSet = new ArrayList<>();
-        List<Community> communities = hospitalcareSystem.getCity().getCommunities();
-        PatientDirectory patientDirectory = hospitalcareSystem.getPatientDirectory();
+        List<Community> communities = healthcareSystem.getCity().getCommunities();
+        PatientDirectory patientDirectory = healthcareSystem.getPatientDirectory();
         
         //compare houses in each patient obj to match the houses in each community
         for(Community community : communities){

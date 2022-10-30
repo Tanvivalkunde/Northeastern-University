@@ -60,6 +60,10 @@ public class Patient extends Person  {
         return name;
     }
 
+    public Object getEncounterHistory() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     
    
     

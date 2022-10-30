@@ -55,4 +55,8 @@ public class Encounter {
     public void setCurrentHealthStatus(String currentHealthStatus) {
         this.currentHealthStatus = currentHealthStatus;
     }
+
+    public void setHealthStatus() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
