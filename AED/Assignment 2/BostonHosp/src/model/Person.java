@@ -12,47 +12,11 @@ import java.util.Date;
  * @author Tanvi
  */
 public class Person {
-      private int id;
-    private String ssn;
-    private String name;
-    private Date dateOfBirth;
-    private String email;
-    private String password;
-    private String phoneNumber;
-    private String gender;
-    private Role role;
-    private House residence;
-
-    public Person(String ssn, String name, Date dateOfBirth, String email, String password, String phoneNumber, String gender, Role role) {
-        this.ssn = ssn;
-        this.name = name;
-        this.dateOfBirth = dateOfBirth;
-        this.email = email;
-        this.password = password;
-        this.phoneNumber = phoneNumber;
-        this.gender = gender;
-        this.role = role;
-//        this.residence = residence;
-        
-    
-    
-}
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getSsn() {
-        return ssn;
-    }
-
-    public void setSsn(String ssn) {
-        this.ssn = ssn;
-    }
+      String name=null;
+    long phone=0;
+    String email=null;
+    int age=0;
+    model.House house=null;
 
     public String getName() {
         return name;
@@ -62,12 +26,12 @@ public class Person {
         this.name = name;
     }
 
-    public Date getDateOfBirth() {
-        return dateOfBirth;
+    public long getPhone() {
+        return phone;
     }
 
-    public void setDateOfBirth(Date dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
+    public void setPhone(long phone) {
+        this.phone = phone;
     }
 
     public String getEmail() {
@@ -78,58 +42,35 @@ public class Person {
         this.email = email;
     }
 
-    public String getPassword() {
-        return password;
+    public int getAge() {
+        return age;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setAge(int age) {
+        this.age = age;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
+    public House getHouse() {
+        return house;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setHouse(House house) {
+        this.house = house;
+    }
+    public Person(String name, long phone, String email, int age,
+            String houseNumber, String streetName, String communityName, int zipCode) {
+        this.name = name;
+        this.phone = phone;
+        this.email = email;
+        this.age = age;
+        this.house = new House(houseNumber, streetName, communityName, zipCode);
     }
 
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
+    @Override
+    public String toString() {
+        return name;
     }
     
-
-    public Role getRole() {
-        return role;
-    }
-
-    public void setRole(Role role) {
-        this.role = role;
-    }
-
-    public House getResidence() {
-        return residence;
-    }
-
-    public void setResidence(House residence) {
-        this.residence = residence;
-    }
-
-    private static class Gender {
-
-        public Gender() {
-        }
-    }
-
-    private static class House {
-
-        public House() {
-        }
-    }
 }
 
-    
+   

@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package model;
-import java.util.ArrayList;
+
 import java.util.Date;
 
 
@@ -13,23 +13,57 @@ import java.util.Date;
  * @author Tanvi
  */
 public class Patient extends Person  {
-    private int patientId;
-    private int encounterCount;
-    private ArrayList<Encounter> encounters;
-
-
-    public Patient(int patientId, String ssn, String name, Date dateOfBirth, String email, String password, String phoneNumber, String gender) {
-        super(ssn, name, dateOfBirth, email, password, phoneNumber, gender, Role.PATIENT);
+    
+    int patientId=0;
+    Encounterhistory encounterhistory;  
+    
+    String healthStatus;
+    
+    public Patient(String name, long phone, String email,int age,String houseNumber,String streetName, String communityName, int zipCode, int patientId) {
+        super(name,phone,email, age, houseNumber, streetName, communityName, zipCode);
+        
+        this.encounterhistory = new Encounterhistory();
+        this.healthStatus = "Normal";
         this.patientId = patientId;
-        this.encounters = new ArrayList<>();
-        encounterCount = 1;
+       }
+    public int getPatientId() {
+        return patientId;
+    }
+
+    public void setPatientId(int patientId) {
+        this.patientId = patientId;
+    }
+
+    public Encounterhistory getEncounterhistory() {
+        return encounterhistory;
+    }
+
+    public void setEncounterhistory(Encounterhistory encounterHistory) {
+        this.encounterhistory = encounterHistory;
+    }
+
+    public String getHealthStatus() {
+        return healthStatus;
+    }
+
+    public void setHealthStatus(String healthStatus) {
+        this.healthStatus = healthStatus;
+    }
+    
+    public void updateHealthStatus(){
+        int lastEncounterCount = encounterhistory.getEncounterhistory().size();
+        setHealthStatus(encounterhistory.getEncounterhistory().get(lastEncounterCount - 1).getCurrentHealthStatus());
+    }
+    
+    @Override
+    public String toString(){
+        return name;
+    }
+
+    
    
     
 }
 
-    private static class Encounter {
+    
 
-        public Encounter() {
-        }
-    }
-}

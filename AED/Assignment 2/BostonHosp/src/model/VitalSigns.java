@@ -10,60 +10,51 @@ package model;
  * @author Tanvi
  */
 public class VitalSigns {
-    int lowerBloodPressure;
-    int upperBloodPressure;
-    float bodyTemperature;
-    int pulseRate;
-    int respirationRate;
+     private int respiratoryRate;
+    private int bloodPressure;
+    private int heartRate;
+    private double temperature;
 
-    public VitalSigns(int lowerBloodPressure, int upperBloodPressure, float bodyTemperature, int pulseRate, int respirationRate) {
-        this.lowerBloodPressure = lowerBloodPressure;
-        this.upperBloodPressure = upperBloodPressure;
-        this.bodyTemperature = bodyTemperature;
-        this.pulseRate = pulseRate;
-        this.respirationRate = respirationRate;
+    public VitalSigns(int respiratoryRate, int bloodPressure, int heartRate, double temperature) {
+        this.respiratoryRate = respiratoryRate;
+        this.bloodPressure = bloodPressure;
+        this.heartRate = heartRate;
+        this.temperature = temperature;
         
         
+}
+
+    public int getRespiratoryRate() {
+        return respiratoryRate;
     }
 
-    public int getLowerBloodPressure() {
-        return lowerBloodPressure;
+    public void setRespiratoryRate(int respiratoryRate) {
+        this.respiratoryRate = respiratoryRate;
     }
 
-    public void setLowerBloodPressure(int lowerBloodPressure) {
-        this.lowerBloodPressure = lowerBloodPressure;
+    public int getBloodPressure() {
+        return bloodPressure;
     }
 
-    public int getUpperBloodPressure() {
-        return upperBloodPressure;
+    public void setBloodPressure(int bloodPressure) {
+        this.bloodPressure = bloodPressure;
     }
 
-    public void setUpperBloodPressure(int upperBloodPressure) {
-        this.upperBloodPressure = upperBloodPressure;
+    public int getHeartRate() {
+        return heartRate;
     }
 
-    public float getBodyTemperature() {
-        return bodyTemperature;
+    public void setHeartRate(int heartRate) {
+        this.heartRate = heartRate;
     }
 
-    public void setBodyTemperature(float bodyTemperature) {
-        this.bodyTemperature = bodyTemperature;
+    public double getTemperature() {
+        return temperature;
     }
 
-    public int getPulseRate() {
-        return pulseRate;
-    }
-
-    public void setPulseRate(int pulseRate) {
-        this.pulseRate = pulseRate;
-    }
-
-    public int getRespirationRate() {
-        return respirationRate;
-    }
-
-    public void setRespirationRate(int respirationRate) {
-        this.respirationRate = respirationRate;
+    public void setTemperature(double temperature) {
+        this.temperature = temperature;
     }
 }
 
+    
