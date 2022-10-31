@@ -10,7 +10,7 @@ import ui.LoginPanel;
 
 /**
  *
- * @author  KishoreKVN
+ * @author  Tanvi
  */
 public class AdminJPanel extends javax.swing.JPanel {
     JPanel mainWorkArea;

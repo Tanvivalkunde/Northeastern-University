@@ -1,8 +1,4 @@
-/*
- * CreateProductJPanel.java
- *
- * Created on September 18, 2008, 2:54 PM
- */
+
 package ui.Admin;
 
 import model.Community;
@@ -15,7 +11,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author KishoreKVN
+ * @author Tanvi
  */
 public class CreateCommunity extends javax.swing.JPanel {
 
