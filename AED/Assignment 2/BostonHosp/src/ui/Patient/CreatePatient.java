@@ -1,5 +1,9 @@
 
+        
+    
+
 package ui.Patient;
+
 
 import model.City;
 import model.Community;
@@ -10,24 +14,13 @@ import model.PatientDirectory;
 import ui.Admin.ManagePatients;
 import java.awt.CardLayout;
 import java.awt.Component;
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.ImageIcon;
-import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 
 public class CreatePatient extends javax.swing.JPanel {
 
-    PatientDirectory patientDirectory;
+    PatientDirectory PatientDirectory;
     City city;
     HealthcareSystem healthcareSystem;
     JPanel workArea;
@@ -39,7 +32,7 @@ public class CreatePatient extends javax.swing.JPanel {
      */
     public CreatePatient(JPanel workArea, HealthcareSystem healthcareSystem) {
         initComponents();
-        this.patientDirectory = healthcareSystem.getPatientDirectory();
+        this.PatientDirectory = healthcareSystem.getPatientDirectory();
         city = healthcareSystem.getCity();
         this.workArea = workArea;
         
@@ -306,7 +299,7 @@ public class CreatePatient extends javax.swing.JPanel {
         patient = new Patient( patientName, phone, email, age, houseNo, streetName, communityName, zip,patientId);
       
         //add this house to selected comunity also
-        patientDirectory.addPatient(patient);
+        PatientDirectory.addPatient(patient);
         selectedCommunity.addHouseToCommunity(new House(houseNo, streetName, communityName, zip));
         JOptionPane.showMessageDialog(this, "Patient details successfully added", "Information", JOptionPane.INFORMATION_MESSAGE);
         backAction();
@@ -370,4 +363,4 @@ public class CreatePatient extends javax.swing.JPanel {
             cmbCommunity.addItem(c);
         }
     }
-}
+        }

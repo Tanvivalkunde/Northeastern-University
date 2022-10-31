@@ -233,7 +233,7 @@ public class ManagePatients extends javax.swing.JPanel {
         // TODO add your handling code here:
 
 
-        String path = "C:\\Users\\LENOVO\\Desktop\\patients.csv";
+        String path = "C:\\Users\\Tanvi\\Desktop\\patients.csv.xlsx";
         String line = "";
 
        try{
