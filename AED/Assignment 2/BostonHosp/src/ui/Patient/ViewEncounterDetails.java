@@ -9,10 +9,7 @@ import javax.swing.JOptionPane;
 import model.Encounter;
 import javax.swing.JPanel;
 
-/**
- *
- * @author KishoreKVN
- */
+
 public class ViewEncounterDetails extends javax.swing.JPanel {
     
     JPanel workArea;

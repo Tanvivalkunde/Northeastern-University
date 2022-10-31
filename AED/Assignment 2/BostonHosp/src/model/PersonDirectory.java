@@ -5,10 +5,28 @@
  */
 package model;
 
+import java.util.ArrayList;
+import java.util.List;
+
+
 /**
  *
  * @author Tanvi
  */
-class PersonDirectory {
+public class PersonDirectory {
+    List<Person> personDirectory;
+    
+    public PersonDirectory() {
+        this.personDirectory = new ArrayList<>();
+    }
+    
+    public List<Person> getPersonDirectory() {
+        return personDirectory;
+    }
+
+    public void setPersonDirectory(List<Person> personDirectory) {
+        this.personDirectory = personDirectory;
+    }
+    
     
 }

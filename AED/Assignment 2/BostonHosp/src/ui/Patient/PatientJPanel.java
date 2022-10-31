@@ -7,10 +7,7 @@ import java.awt.Component;
 import javax.swing.JPanel;
 import ui.LoginPanel;
 
-/**
- *
- * @author  KishoreKVN
- */
+
 public class PatientJPanel extends javax.swing.JPanel {
     JPanel mainWorkArea;
     Patient patient;

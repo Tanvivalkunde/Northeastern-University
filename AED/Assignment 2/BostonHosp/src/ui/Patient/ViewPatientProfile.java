@@ -14,7 +14,7 @@ import ui.Admin.ManagePatients;
 
 /**
  *
- * @author KishoreKVN
+ * @author Tanvi
  */
 public class ViewPatientProfile extends javax.swing.JPanel {
     

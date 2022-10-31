@@ -5,10 +5,7 @@ import model.HealthcareSystem;
 import java.awt.CardLayout;
 
 
-/**
- *
- * @author KishoreKVN
- */
+
 
 public class MainJFrame extends javax.swing.JFrame {
 

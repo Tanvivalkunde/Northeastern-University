@@ -1,8 +1,4 @@
-/*
- * CreateProductJPanel.java
- *
- * Created on September 18, 2008, 2:54 PM
- */
+
 package ui.Patient;
 
 import model.City;
@@ -28,10 +24,7 @@ import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-/**
- *
- * @author KishoreKVN
- */
+
 public class CreatePatient extends javax.swing.JPanel {
 
     PatientDirectory patientDirectory;
